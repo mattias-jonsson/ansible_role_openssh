@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Mattias Jonsson
+  description: Ansible role to configure OpenSSH.
+  min_ansible_version: 2.9.27
+  role_name: ansible_role_openssh
+  license: MIT
+  platforms:
+  - name: EL
+    versions:
+    - "7"
+  - name: Ubuntu
+    versions:
+    - bionic
+    - focal
+    - jammy

@@ -1,0 +1,122 @@
+---
+
+ansible_role_openssh_packages:
+  - 'openssh-server'
+
+ansible_role_openssh_sshd_distdefault_addressfamily: 'any'
+ansible_role_openssh_sshd_distdefault_allowagentforwarding: 'yes'
+ansible_role_openssh_sshd_distdefault_allowtcpforwarding: 'yes'
+ansible_role_openssh_sshd_distdefault_authorizedkeyscommand: 'none'
+ansible_role_openssh_sshd_distdefault_authorizedkeyscommanduser: 'nobody'
+ansible_role_openssh_sshd_distdefault_authorizedkeysfile: '.ssh/authorized_keys'
+ansible_role_openssh_sshd_distdefault_authorizedprincipalsfile: 'none'
+ansible_role_openssh_sshd_distdefault_banner: 'none'
+ansible_role_openssh_sshd_distdefault_challengeresponseauthentication: 'no'
+ansible_role_openssh_sshd_distdefault_chrootdirectory: 'none'
+ansible_role_openssh_sshd_distdefault_clientalivecountmax: '3'
+ansible_role_openssh_sshd_distdefault_clientaliveinterval: '0'
+ansible_role_openssh_sshd_distdefault_compression: 'delayed'
+ansible_role_openssh_sshd_distdefault_gatewayports: 'no'
+ansible_role_openssh_sshd_distdefault_gssapiauthentication: 'yes'
+ansible_role_openssh_sshd_distdefault_gssapicleanupcredentials: 'no'
+ansible_role_openssh_sshd_distdefault_gssapienablek5users: 'no'
+ansible_role_openssh_sshd_distdefault_gssapikeyexchange: 'no'
+ansible_role_openssh_sshd_distdefault_gssapistrictacceptorcheck: 'yes'
+ansible_role_openssh_sshd_distdefault_hostkey:
+  - '/etc/ssh/ssh_host_rsa_key'
+  - '/etc/ssh/ssh_host_ecdsa_key'
+  - '/etc/ssh/ssh_host_ed25519_key'
+ansible_role_openssh_sshd_distdefault_hostbasedauthentication: 'no'
+ansible_role_openssh_sshd_distdefault_ignorerhosts: 'yes'
+ansible_role_openssh_sshd_distdefault_ignoreuserknownhosts: 'no'
+ansible_role_openssh_sshd_distdefault_kerberosauthentication: 'no'
+ansible_role_openssh_sshd_distdefault_kerberosgetafstoken: 'no'
+ansible_role_openssh_sshd_distdefault_kerberosorlocalpasswd: 'yes'
+ansible_role_openssh_sshd_distdefault_kerberosticketcleanup: 'yes'
+ansible_role_openssh_sshd_distdefault_kerberosusekuserok: 'yes'
+ansible_role_openssh_sshd_distdefault_listenaddress:
+  - '0.0.0.0'
+  - '::'
+ansible_role_openssh_sshd_distdefault_logingracetime: '2m'
+ansible_role_openssh_sshd_distdefault_loglevel: 'INFO'
+ansible_role_openssh_sshd_distdefault_maxauthtries: '6'
+ansible_role_openssh_sshd_distdefault_maxsessions: '10'
+ansible_role_openssh_sshd_distdefault_maxstartups: '10:30:100'
+ansible_role_openssh_sshd_distdefault_passwordauthentication: 'yes'
+ansible_role_openssh_sshd_distdefault_permitemptypasswords: 'no'
+ansible_role_openssh_sshd_distdefault_permitrootlogin: 'yes'
+ansible_role_openssh_sshd_distdefault_permittty: 'yes'
+ansible_role_openssh_sshd_distdefault_permittunnel: 'no'
+ansible_role_openssh_sshd_distdefault_permituserenvironment: 'no'
+ansible_role_openssh_sshd_distdefault_pidfile: '/var/run/sshd.pid'
+ansible_role_openssh_sshd_distdefault_port: 
+  - '22'
+ansible_role_openssh_sshd_distdefault_printlastlog: 'yes'
+ansible_role_openssh_sshd_distdefault_printmotd: 'yes'
+ansible_role_openssh_sshd_distdefault_pubkeyauthentication: 'yes'
+ansible_role_openssh_sshd_distdefault_rekeylimit: 'default none'
+ansible_role_openssh_sshd_distdefault_showpatchlevel: 'no'
+ansible_role_openssh_sshd_distdefault_strictmodes: 'yes'
+ansible_role_openssh_sshd_distdefault_syslogfacility: 'AUTHPRIV'
+ansible_role_openssh_sshd_distdefault_tcpkeepalive: 'yes'
+ansible_role_openssh_sshd_distdefault_usedns: 'yes'
+ansible_role_openssh_sshd_distdefault_uselogin: 'no'
+ansible_role_openssh_sshd_distdefault_useprivilegeseparation: 'sandbox'
+ansible_role_openssh_sshd_distdefault_versionaddendum: 'none'
+ansible_role_openssh_sshd_distdefault_x11displayoffset: '10'
+ansible_role_openssh_sshd_distdefault_x11uselocalhost: 'yes'
+ansible_role_openssh_sshd_distdefault_acceptenv:
+  - 'LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES'
+  - 'LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT'
+  - 'LC_IDENTIFICATION LC_ALL LANGUAGE'
+  - 'XMODIFIERS'
+ansible_role_openssh_sshd_distdefault_subsystem:
+  - 'sftp	/usr/libexec/openssh/sftp-server'
+ansible_role_openssh_sshd_distdefault_usepam: 'yes'
+ansible_role_openssh_sshd_distdefault_x11forwarding: 'yes'
+
+
+##### SSH client options
+
+ansible_role_openssh_ssh_distdefault_host:
+  - name: '*'
+    ForwardAgent: no
+    ForwardX11: no
+    RhostsRSAAuthentication: no
+    RSAAuthentication: yes
+    PasswordAuthentication: yes
+    HostbasedAuthentication: no
+    GSSAPIDelegateCredentials: no
+    GSSAPIKeyExchange: no
+    GSSAPITrustDNS: no
+    BatchMode: no
+    CheckHostIP: yes
+    AddressFamily: any
+    ConnectTimeout: 0
+    StrictHostKeyChecking: ask
+    IdentityFile:
+      - ~/.ssh/identity
+      - ~/.ssh/id_rsa
+      - ~/.ssh/id_dsa
+      - ~/.ssh/id_ecdsa
+      - ~/.ssh/id_ed25519
+    Port: 22
+    Protocol: 2
+    Cipher: 3des
+    Ciphers: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-cbc,3des-cbc MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160
+    EscapeChar: '~'
+    Tunnel: no
+    TunnelDevice: any:any
+    PermitLocalCommand: no
+    VisualHostKey: no
+    ProxyCommand: ssh -q -W %h:%p gateway.example.com
+    RekeyLimit: 1G 1h
+    GSSAPIAuthentication: yes
+    ForwardX11Trusted: yes
+    SendEnv:
+      - LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+      - LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+      - LC_IDENTIFICATION LC_ALL LANGUAGE
+      - XMODIFIERS
+
+

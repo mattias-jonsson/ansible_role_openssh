@@ -1,0 +1,9 @@
+---
+
+# TODO replace service name with variable
+- name: restart sshd
+  become: True
+  service:
+    daemon_reload: yes
+    name: sshd
+    state: restarted

@@ -1,0 +1,6 @@
+---
+
+- name: Install OpenSSH server packages
+  package:
+    name: "{{ ansible_role_openssh_packages }}"
+    state: present

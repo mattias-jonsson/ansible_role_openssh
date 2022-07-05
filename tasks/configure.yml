@@ -1,0 +1,62 @@
+---
+
+# - name: Create /etc/ssh/ssh_config from template
+#   template:
+#     src: ssh_config.j2
+#     dest: /etc/ssh/ssh_config
+#     owner: root
+#     group: root
+#     mode: 0644
+#     backup: yes
+#   notify: restart sshd
+
+- name: Create /etc/ssh/sshd_config from template
+  template:
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+    validate: sshd -t -f %s
+  notify: restart sshd
+
+- name: create /etc/ssh/ssh_import_id
+  template:
+    src: ssh_import_id_{{ ansible_distribution }}.j2
+    dest: /etc/ssh/ssh_import_id
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify: restart sshd
+  when: ansible_distribution == "Ubuntu"
+
+- name: check if /etc/ssh/sshd_config.d exists
+  stat:
+    path: "/etc/ssh/sshd_config.d"
+  register: sshconf_dir
+  when: 
+    - ansible_role_openssh_cleanup
+
+
+- name: run cleanup if enabled
+  block:
+
+    - name: build list of unwanted files in conf.d directories
+      become: True
+      ansible.builtin.find:
+        path: /etc/ssh/sshd_config.d
+        file_type: any
+        pattern: .*\.conf$
+        use_regex: yes
+      register: ssh_confd_matched_files
+
+    - name: cleanup /etc/ssh/sshd_config.d
+      become: True
+      command: mv "{{ item }}" "{{ item | dirname }}/{{ item | basename }}.{{ 99999 | random }}.{{ lookup('pipe', 'date +%Y-%m-%d@%H:%M:%S')}}.disabled"
+      with_items: "{{ ssh_confd_matched_files.files | map(attribute='path') | list }}"
+
+  when: 
+    - sshconf_dir.stat.exists | bool
+    - ansible_role_openssh_cleanup

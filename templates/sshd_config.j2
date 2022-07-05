@@ -1,0 +1,213 @@
+# {{ ansible_managed }}
+
+{% if ansible_role_openssh_sshd_acceptenv | length %}
+{% for acceptenv in ansible_role_openssh_sshd_acceptenv %}
+acceptenv {{ acceptenv }}
+{% endfor %}
+{% endif %}
+{% if ansible_role_openssh_sshd_addressfamily | length %}
+addressfamily {{ ansible_role_openssh_sshd_addressfamily }}
+{% endif %}
+{% if ansible_role_openssh_sshd_allowagentforwarding | length %}
+allowagentforwarding {{ ansible_role_openssh_sshd_allowagentforwarding }}
+{% endif %}
+{% if ansible_role_openssh_sshd_allowtcpforwarding | length %}
+allowtcpforwarding {{ ansible_role_openssh_sshd_allowtcpforwarding }}
+{% endif %}
+{% if ansible_role_openssh_sshd_authorizedkeyscommand | length %}
+authorizedkeyscommand {{ ansible_role_openssh_sshd_authorizedkeyscommand }}
+{% endif %}
+{% if ansible_role_openssh_sshd_authorizedkeyscommanduser | length %}
+authorizedkeyscommanduser {{ ansible_role_openssh_sshd_authorizedkeyscommanduser }}
+{% endif %}
+{% if ansible_role_openssh_sshd_authorizedkeysfile | length %}
+authorizedkeysfile {{ ansible_role_openssh_sshd_authorizedkeysfile }}
+{% endif %}
+{% if ansible_role_openssh_sshd_authorizedprincipalsfile | length %}
+authorizedprincipalsfile {{ ansible_role_openssh_sshd_authorizedprincipalsfile }}
+{% endif %}
+{% if ansible_role_openssh_sshd_banner | length %}
+banner {{ ansible_role_openssh_sshd_banner }}
+{% endif %}
+{% if ansible_role_openssh_sshd_challengeresponseauthentication | length %}
+challengeresponseauthentication {{ ansible_role_openssh_sshd_challengeresponseauthentication }}
+{% endif %}
+{% if ansible_role_openssh_sshd_chrootdirectory | length %}
+chrootdirectory {{ ansible_role_openssh_sshd_chrootdirectory }}
+{% endif %}
+{% if ansible_role_openssh_sshd_clientalivecountmax | length %}
+clientalivecountmax {{ ansible_role_openssh_sshd_clientalivecountmax }}
+{% endif %}
+{% if ansible_role_openssh_sshd_clientaliveinterval | length %}
+clientaliveinterval {{ ansible_role_openssh_sshd_clientaliveinterval }}
+{% endif %}
+{% if ansible_role_openssh_sshd_compression | length %}
+compression {{ ansible_role_openssh_sshd_compression }}
+{% endif %}
+{% if ansible_role_openssh_sshd_gatewayports | length %}
+gatewayports {{ ansible_role_openssh_sshd_gatewayports }}
+{% endif %}
+{% if ansible_role_openssh_sshd_gssapiauthentication | length %}
+gssapiauthentication {{ ansible_role_openssh_sshd_gssapiauthentication }}
+{% endif %}
+{% if ansible_role_openssh_sshd_gssapicleanupcredentials | length %}
+gssapicleanupcredentials {{ ansible_role_openssh_sshd_gssapicleanupcredentials }}
+{% endif %}
+{% if ansible_role_openssh_sshd_gssapienablek5users | length %}
+gssapienablek5users {{ ansible_role_openssh_sshd_gssapienablek5users }}
+{% endif %}
+{% if ansible_role_openssh_sshd_gssapikeyexchange | length %}
+gssapikeyexchange {{ ansible_role_openssh_sshd_gssapikeyexchange }}
+{% endif %}
+{% if ansible_role_openssh_sshd_gssapistrictacceptorcheck | length %}
+gssapistrictacceptorcheck {{ ansible_role_openssh_sshd_gssapistrictacceptorcheck }}
+{% endif %}
+{% if ansible_role_openssh_sshd_hostbasedauthentication | length %}
+hostbasedauthentication {{ ansible_role_openssh_sshd_hostbasedauthentication }}
+{% endif %}
+{% if ansible_role_openssh_sshd_hostkey | length %}
+{% for hostkey in ansible_role_openssh_sshd_hostkey %}
+hostkey {{ hostkey }}
+{% endfor %}
+{% endif %}
+{% if ansible_role_openssh_sshd_ignorerhosts | length %}
+ignorerhosts {{ ansible_role_openssh_sshd_ignorerhosts }}
+{% endif %}
+{% if ansible_role_openssh_sshd_ignoreuserknownhosts | length %}
+ignoreuserknownhosts {{ ansible_role_openssh_sshd_ignoreuserknownhosts }}
+{% endif %}
+{% if ansible_role_openssh_sshd_kbdinteractiveauthentication | length %}
+kbdinteractiveauthentication {{ ansible_role_openssh_sshd_kbdinteractiveauthentication }}
+{% endif %}
+{% if ansible_role_openssh_sshd_kerberosauthentication | length %}
+kerberosauthentication {{ ansible_role_openssh_sshd_kerberosauthentication }}
+{% endif %}
+{% if ansible_role_openssh_sshd_kerberosgetafstoken | length %}
+kerberosgetafstoken {{ ansible_role_openssh_sshd_kerberosgetafstoken }}
+{% endif %}
+{% if ansible_role_openssh_sshd_kerberosorlocalpasswd | length %}
+kerberosorlocalpasswd {{ ansible_role_openssh_sshd_kerberosorlocalpasswd }}
+{% endif %}
+{% if ansible_role_openssh_sshd_kerberosticketcleanup | length %}
+kerberosticketcleanup {{ ansible_role_openssh_sshd_kerberosticketcleanup }}
+{% endif %}
+{% if ansible_role_openssh_sshd_kerberosusekuserok | length %}
+kerberosusekuserok {{ ansible_role_openssh_sshd_kerberosusekuserok }}
+{% endif %}
+{% if ansible_role_openssh_sshd_listenaddress | length %}
+{% for ipaddress in ansible_role_openssh_sshd_listenaddress %}
+listenaddress {{ ipaddress }}
+{% endfor %}
+{% endif %}
+{% if ansible_role_openssh_sshd_logingracetime | length %}
+logingracetime {{ ansible_role_openssh_sshd_logingracetime }}
+{% endif %}
+{% if ansible_role_openssh_sshd_loglevel | length %}
+loglevel {{ ansible_role_openssh_sshd_loglevel }}
+{% endif %}
+{% if ansible_role_openssh_sshd_maxauthtries | length %}
+maxauthtries {{ ansible_role_openssh_sshd_maxauthtries }}
+{% endif %}
+{% if ansible_role_openssh_sshd_maxsessions | length %}
+maxsessions {{ ansible_role_openssh_sshd_maxsessions }}
+{% endif %}
+{% if ansible_role_openssh_sshd_maxstartups | length %}
+maxstartups {{ ansible_role_openssh_sshd_maxstartups }}
+{% endif %}
+{% if ansible_role_openssh_sshd_passwordauthentication | length %}
+passwordauthentication {{ ansible_role_openssh_sshd_passwordauthentication }}
+{% endif %}
+{% if ansible_role_openssh_sshd_permitemptypasswords | length %}
+permitemptypasswords {{ ansible_role_openssh_sshd_permitemptypasswords }}
+{% endif %}
+{% if ansible_role_openssh_sshd_permitrootlogin | length %}
+permitrootlogin {{ ansible_role_openssh_sshd_permitrootlogin }}
+{% endif %}
+{% if ansible_role_openssh_sshd_permittty | length %}
+permittty {{ ansible_role_openssh_sshd_permittty }}
+{% endif %}
+{% if ansible_role_openssh_sshd_permittunnel | length %}
+permittunnel {{ ansible_role_openssh_sshd_permittunnel }}
+{% endif %}
+{% if ansible_role_openssh_sshd_permituserenvironment | length %}
+permituserenvironment {{ ansible_role_openssh_sshd_permituserenvironment }}
+{% endif %}
+{% if ansible_role_openssh_sshd_pidfile | length %}
+pidfile {{ ansible_role_openssh_sshd_pidfile }}
+{% endif %}
+{% if ansible_role_openssh_sshd_printlastlog | length %}
+printlastlog {{ ansible_role_openssh_sshd_printlastlog }}
+{% endif %}
+{% if ansible_role_openssh_sshd_printmotd | length %}
+printmotd {{ ansible_role_openssh_sshd_printmotd }}
+{% endif %}
+{% if ansible_role_openssh_sshd_port | length %}
+{% for port in ansible_role_openssh_sshd_port %}
+port {{ port }}
+{% endfor %}
+{% endif %}
+{% if ansible_role_openssh_sshd_pubkeyauthentication | length %}
+pubkeyauthentication {{ ansible_role_openssh_sshd_pubkeyauthentication }}
+{% endif %}
+{% if ansible_role_openssh_sshd_rekeylimit | length %}
+rekeylimit {{ ansible_role_openssh_sshd_rekeylimit }}
+{% endif %}
+{% if ansible_role_openssh_sshd_showpatchlevel | length %}
+showpatchlevel {{ ansible_role_openssh_sshd_showpatchlevel }}
+{% endif %}
+{% if ansible_role_openssh_sshd_strictmodes | length %}
+strictmodes {{ ansible_role_openssh_sshd_strictmodes }}
+{% endif %}
+{% if ansible_role_openssh_sshd_subsystem | length %}
+{% for subsystem in ansible_role_openssh_sshd_subsystem %}
+subsystem {{ subsystem }}
+{% endfor %}
+{% endif %}
+{% if ansible_role_openssh_sshd_syslogfacility | length %}
+syslogfacility {{ ansible_role_openssh_sshd_syslogfacility }}
+{% endif %}
+{% if ansible_role_openssh_sshd_tcpkeepalive | length %}
+tcpkeepalive {{ ansible_role_openssh_sshd_tcpkeepalive }}
+{% endif %}
+{% if ansible_role_openssh_sshd_usedns | length %}
+usedns {{ ansible_role_openssh_sshd_usedns }}
+{% endif %}
+{% if ansible_role_openssh_sshd_uselogin | length %}
+uselogin {{ ansible_role_openssh_sshd_uselogin }}
+{% endif %}
+{% if ansible_role_openssh_sshd_usepam | length %}
+usepam {{ ansible_role_openssh_sshd_usepam }}
+{% endif %}
+{% if ansible_role_openssh_sshd_useprivilegeseparation %}
+useprivilegeseparation {{ ansible_role_openssh_sshd_useprivilegeseparation }}
+{% endif %}
+{% if ansible_role_openssh_sshd_versionaddendum %}
+versionaddendum {{ ansible_role_openssh_sshd_versionaddendum }}
+{% endif %}
+{% if ansible_role_openssh_sshd_x11displayoffset %}
+x11displayoffset {{ ansible_role_openssh_sshd_x11displayoffset }}
+{% endif %}
+{% if ansible_role_openssh_sshd_x11forwarding %}
+x11forwarding {{ ansible_role_openssh_sshd_x11forwarding }}
+{% endif %}
+{% if ansible_role_openssh_sshd_x11uselocalhost %}
+x11uselocalhost {{ ansible_role_openssh_sshd_x11uselocalhost }}
+{% endif %}
+
+{% if ansible_role_openssh_sshd_match_statements | length %}
+{% for type in ansible_role_openssh_sshd_match_statements %}
+{% if type.options is defined %}
+match {{ type.type }} {{ type.name }}
+{% for key , value in type.options.items() %}
+{% if key | lower != "acceptenv" %}
+    {{ key | lower }} {{ value }}
+{% elif key | lower  == "acceptenv" %}
+{% for envitem in type.options.acceptenv %}
+    acceptenv {{ envitem }}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+{% endif %}
+{% endfor %}
+{% endif %}
